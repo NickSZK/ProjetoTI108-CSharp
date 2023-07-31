@@ -9,3 +9,4 @@ C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetosTI108\EmpresaABC\
 C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetosTI108\EmpresaABC\PadariaCarmel\obj\Debug\PadariaCarmel.exe
 C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetosTI108\EmpresaABC\PadariaCarmel\obj\Debug\PadariaCarmel.pdb
 C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetosTI108\EmpresaABC\PadariaCarmel\obj\Debug\PadariaCarmel.frmLogin.resources
+C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetosTI108\EmpresaABC\PadariaCarmel\obj\Debug\PadariaCarmel.frmCalcula.resources

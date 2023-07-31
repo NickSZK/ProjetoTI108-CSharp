@@ -46,7 +46,6 @@ namespace PadariaCarmel {
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Descrição";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
@@ -64,7 +63,6 @@ namespace PadariaCarmel {
             this.button1.TabIndex = 2;
             this.button1.Text = "&Entar";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox1
             // 
@@ -163,7 +161,6 @@ namespace PadariaCarmel {
             this.button2.TabIndex = 2;
             this.button2.Text = "Sai&r";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmComponentes
             // 
@@ -184,7 +181,6 @@ namespace PadariaCarmel {
             this.Controls.Add(this.label1);
             this.Name = "frmComponentes";
             this.Text = "frmComponentes";
-            this.Load += new System.EventHandler(this.frmComponentes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

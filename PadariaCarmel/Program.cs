@@ -13,7 +13,7 @@ namespace PadariaCarmel {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new frmCalcula());
         }
     }
 }
