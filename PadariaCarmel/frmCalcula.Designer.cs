@@ -149,6 +149,7 @@ namespace PadariaCarmel {
             this.btnCalcular.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCalcular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // btnLimpar
             // 
