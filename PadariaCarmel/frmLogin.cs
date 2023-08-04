@@ -14,31 +14,42 @@ namespace PadariaCarmel {
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e) {
-
-        }
-
-        private void frmLogin_Load(object sender, EventArgs e) {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e) {
-
-        }
-        private void lblUsuario_Click(object sender, EventArgs e) {
-
-        }
-
         private void btnSair_Click(object sender, EventArgs e) {
-            Close();
+            // Close();
+            Application.Exit();
         }
 
         private void btnEntrar_Click(object sender, EventArgs e) {
-            MessageBox.Show("Bem vindo ao sistema.",
-                "Mensagem do sistema",
-                MessageBoxButtons.YesNoCancel,
-                MessageBoxIcon.Information,
-                MessageBoxDefaultButton.Button3);
+            if(txtUsuario.Text.Equals("senac") && txtSenha.Text.Equals("senac")) {
+                frmMenuPrincipal abrir = new frmMenuPrincipal();
+                abrir.Show();
+                this.Hide();
+            } else {
+                MessageBox.Show("Usuário ou senha inválidos.",
+                    "Mensagem do sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1);
+
+                limparTela();
+            }
+        }
+        public void limparTela() {
+            txtUsuario.Clear();
+            txtSenha.Clear();
+            txtUsuario.Focus();
+        }
+
+        private void txtUsuario_KeyDown(object sender, KeyEventArgs e) {
+            if(e.KeyCode == Keys.Enter) {
+                txtSenha.Focus();
+            }
+        }
+
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                btnEntrar.Focus();
+            }
         }
     }
 }
