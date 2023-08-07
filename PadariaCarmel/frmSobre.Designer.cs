@@ -24,10 +24,18 @@ namespace PadariaCarmel {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmSobre
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "frmSobre";
             this.Text = "frmSobre";
+            this.Load += new System.EventHandler(this.frmSobre_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
