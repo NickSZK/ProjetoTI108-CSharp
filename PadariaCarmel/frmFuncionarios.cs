@@ -89,7 +89,6 @@ namespace PadariaCarmel {
             mskTelefone.Clear();
 
             cbbEstado.Text = "";
-
             txtNome.Focus();
         }
 
@@ -120,5 +119,42 @@ namespace PadariaCarmel {
         private void btnLimpar_Click(object sender, EventArgs e) {
             limparCampos();
         }
+
+    public void buscaCEP(string numCEP) {
+      // http://www.andrealveslima.com.br/blog/index.php/2016/09/07/acessando-os-web-services-dos-correios-com-c-e-vb-net-consulta-de-ceps-e-precos/
+      // https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl
+      WSCorreios.AtendeClienteClient ws = new WSCorreios.AtendeClienteClient();
+
+
+      WSCorreios.enderecoERP endereco = ws.consultaCEP(numCEP);
+
+      txtEndereco.Text = endereco.end;
+      txtBairro.Text = endereco.bairro;
+      txtCidade.Text = endereco.cidade;
+      cbbEstado.Text = endereco.uf;
     }
+
+    private void mskCEP_KeyDown(object sender, KeyEventArgs e) {
+      try {
+        if (e.KeyCode == Keys.Enter) {
+          buscaCEP(mskCEP.Text);
+          txtNumero.Focus();
+        }
+      } catch(Exception) {
+        MessageBox.Show("Favor inserir CEP váilido",
+          "Mensagem do sitema",
+          MessageBoxButtons.OK,
+          MessageBoxIcon.Error,
+          MessageBoxDefaultButton.Button1);
+        mskCEP.Focus();
+        mskCEP.Text = "";
+      }
+      
+    }
+
+    private void btnPesquisar_Click(object sender, EventArgs e) {
+      frmPesquisarFuncionarios abrir = new frmPesquisarFuncionarios();
+      abrir.ShowDialog();
+    }
+  }
 }
