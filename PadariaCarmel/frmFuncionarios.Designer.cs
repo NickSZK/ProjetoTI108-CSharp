@@ -52,10 +52,10 @@ namespace PadariaCarmel {
       this.lblEmail = new System.Windows.Forms.Label();
       this.mskCPF = new System.Windows.Forms.MaskedTextBox();
       this.lblCPF = new System.Windows.Forms.Label();
-      this.txtNome = new System.Windows.Forms.TextBox();
       this.lblNome = new System.Windows.Forms.Label();
       this.txtCodigo = new System.Windows.Forms.TextBox();
       this.lblCOdigo = new System.Windows.Forms.Label();
+      this.txtNome = new System.Windows.Forms.TextBox();
       this.pnlCRUD.SuspendLayout();
       this.pnlFuncionario.SuspendLayout();
       this.SuspendLayout();
@@ -173,6 +173,7 @@ namespace PadariaCarmel {
       // 
       // pnlFuncionario
       // 
+      this.pnlFuncionario.Controls.Add(this.txtNome);
       this.pnlFuncionario.Controls.Add(this.mskCEP);
       this.pnlFuncionario.Controls.Add(this.lblCEP);
       this.pnlFuncionario.Controls.Add(this.cbbEstado);
@@ -191,7 +192,6 @@ namespace PadariaCarmel {
       this.pnlFuncionario.Controls.Add(this.lblEmail);
       this.pnlFuncionario.Controls.Add(this.mskCPF);
       this.pnlFuncionario.Controls.Add(this.lblCPF);
-      this.pnlFuncionario.Controls.Add(this.txtNome);
       this.pnlFuncionario.Controls.Add(this.lblNome);
       this.pnlFuncionario.Controls.Add(this.txtCodigo);
       this.pnlFuncionario.Controls.Add(this.lblCOdigo);
@@ -361,14 +361,6 @@ namespace PadariaCarmel {
       this.lblCPF.TabIndex = 4;
       this.lblCPF.Text = "CPF";
       // 
-      // txtNome
-      // 
-      this.txtNome.Location = new System.Drawing.Point(35, 144);
-      this.txtNome.MaxLength = 100;
-      this.txtNome.Name = "txtNome";
-      this.txtNome.Size = new System.Drawing.Size(282, 26);
-      this.txtNome.TabIndex = 2;
-      // 
       // lblNome
       // 
       this.lblNome.AutoSize = true;
@@ -394,6 +386,14 @@ namespace PadariaCarmel {
       this.lblCOdigo.Size = new System.Drawing.Size(59, 20);
       this.lblCOdigo.TabIndex = 0;
       this.lblCOdigo.Text = "Código";
+      // 
+      // txtNome
+      // 
+      this.txtNome.Location = new System.Drawing.Point(35, 144);
+      this.txtNome.MaxLength = 10;
+      this.txtNome.Name = "txtNome";
+      this.txtNome.Size = new System.Drawing.Size(282, 26);
+      this.txtNome.TabIndex = 21;
       // 
       // frmFuncionarios
       // 
@@ -429,7 +429,6 @@ namespace PadariaCarmel {
         private System.Windows.Forms.Panel pnlFuncionario;
         private System.Windows.Forms.MaskedTextBox mskCPF;
         private System.Windows.Forms.Label lblCPF;
-        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblCOdigo;
@@ -449,5 +448,6 @@ namespace PadariaCarmel {
         private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.Label lblBairro;
+    private System.Windows.Forms.TextBox txtNome;
   }
 }

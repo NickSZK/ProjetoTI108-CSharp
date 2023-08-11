@@ -23,7 +23,12 @@ namespace PadariaCarmel {
             InitializeComponent();
         }
 
-        private void btnNovo_Click(object sender, EventArgs e) {
+        public frmFuncionarios(string nome) {
+          InitializeComponent();
+          txtNome.Text = nome;
+        }
+
+    private void btnNovo_Click(object sender, EventArgs e) {
             habilitarCampos();
         }
 
@@ -47,8 +52,6 @@ namespace PadariaCarmel {
             btnAlterar.Enabled = false;
             btnExcluir.Enabled = false;
             btnLimpar.Enabled = false;
-
-            limparCampos();
         }
 
         public void habilitarCampos() {
@@ -154,7 +157,8 @@ namespace PadariaCarmel {
 
     private void btnPesquisar_Click(object sender, EventArgs e) {
       frmPesquisarFuncionarios abrir = new frmPesquisarFuncionarios();
-      abrir.ShowDialog();
+      abrir.Show();
+      this.Hide();
     }
   }
 }

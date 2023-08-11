@@ -18,7 +18,6 @@ C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetosTI108\EmpresaABC\
 C:\Users\douglas.svieira3.SENACEDU\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\bin\x64\Debug\PadariaCarmel.exe.config
 C:\Users\douglas.svieira3.SENACEDU\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\bin\x64\Debug\PadariaCarmel.exe
 C:\Users\douglas.svieira3.SENACEDU\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\bin\x64\Debug\PadariaCarmel.pdb
-C:\Users\douglas.svieira3.SENACEDU\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\obj\x64\Debug\PadariaCarmel.csproj.AssemblyReference.cache
 C:\Users\douglas.svieira3.SENACEDU\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\obj\x64\Debug\PadariaCarmel.frmCalcula.resources
 C:\Users\douglas.svieira3.SENACEDU\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\obj\x64\Debug\PadariaCarmel.frmComponentes.resources
 C:\Users\douglas.svieira3.SENACEDU\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\obj\x64\Debug\PadariaCarmel.frmFuncionarios.resources

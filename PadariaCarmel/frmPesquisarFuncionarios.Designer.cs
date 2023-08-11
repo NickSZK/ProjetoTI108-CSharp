@@ -76,6 +76,7 @@ namespace PadariaCarmel {
       this.rdbNome.TabIndex = 2;
       this.rdbNome.Text = "Nome";
       this.rdbNome.UseVisualStyleBackColor = true;
+      this.rdbNome.CheckedChanged += new System.EventHandler(this.rdbNome_CheckedChanged);
       // 
       // rdbCodigo
       // 
@@ -86,6 +87,7 @@ namespace PadariaCarmel {
       this.rdbCodigo.TabIndex = 1;
       this.rdbCodigo.Text = "Código";
       this.rdbCodigo.UseVisualStyleBackColor = true;
+      this.rdbCodigo.CheckedChanged += new System.EventHandler(this.rdbCodigo_CheckedChanged);
       // 
       // btnPesquisar
       // 
@@ -110,6 +112,7 @@ namespace PadariaCarmel {
       this.lstPesquisar.Name = "lstPesquisar";
       this.lstPesquisar.Size = new System.Drawing.Size(563, 144);
       this.lstPesquisar.TabIndex = 6;
+      this.lstPesquisar.SelectedIndexChanged += new System.EventHandler(this.lstPesquisar_SelectedIndexChanged);
       // 
       // btnLimpar
       // 
