@@ -33,7 +33,7 @@ namespace PadariaCarmel {
             habilitarCampos();
         }
 
-        // Desabilitar campos
+        // Desabilitar campos 
         public void desabilitarCampos() {
             txtCodigo.Enabled = false;
             txtNome.Enabled = false;
