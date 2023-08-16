@@ -231,11 +231,11 @@ namespace PadariaCarmel {
          // 
          this.cbbEstado.FormattingEnabled = true;
          this.cbbEstado.Items.AddRange(new object[] {
-            "São Paulo",
-            "Minas Gerais",
-            "Paraná",
-            "Santa Catarina",
-            "Rio Grande do Sul"});
+            "SP",
+            "MG",
+            "PR",
+            "SC",
+            "RS"});
          this.cbbEstado.Location = new System.Drawing.Point(378, 378);
          this.cbbEstado.Name = "cbbEstado";
          this.cbbEstado.Size = new System.Drawing.Size(121, 28);

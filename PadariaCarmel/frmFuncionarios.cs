@@ -31,6 +31,7 @@ namespace PadariaCarmel {
 
       private void btnNovo_Click(object sender, EventArgs e) {
          habilitarCampos();
+         pesquisarPorCod();
       }
 
       // Desabilitar campos 
@@ -87,6 +88,7 @@ namespace PadariaCarmel {
          txtBairro.Clear();
          txtCidade.Clear();
          txtEmail.Clear();
+         txtCodigo.Clear();
 
          mskCPF.Clear();
          mskCEP.Clear();
@@ -104,16 +106,34 @@ namespace PadariaCarmel {
       }
 
       private void btnCadastrar_Click(object sender, EventArgs e) {
-         MessageBox.Show("Cadastrado com Sucesso!",
+         if(txtNome.Text.Equals("") || txtEmail.Text.Equals("") ||
+            txtBairro.Text.Equals("") || txtCidade.Text.Equals("") ||
+            txtEndereco.Text.Equals("") || txtNumero.Text.Equals("") ||
+            cbbEstado.Text.Equals("") ||
+            mskCEP.Text.Equals("     -") || mskCPF.Text.Equals("   .   .   -")|| mskTelefone.Text.Equals("(  )      -")) {
+            MessageBox.Show("Preenchimento de campo obrigatório!",
              "Mensagem do Sistema.",
              MessageBoxButtons.OK,
              MessageBoxIcon.Information,
              MessageBoxDefaultButton.Button1);
 
-         cadastrarFuncionarios();
+            txtNome.Focus();
+         } else {
+            cadastrarFuncionarios();
 
-         desabilitarCampos();
-         btnNovo.Enabled = true;
+            MessageBox.Show("Cadastrado com Sucesso!",
+                "Mensagem do Sistema.",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information,
+                MessageBoxDefaultButton.Button1);
+
+            desabilitarCampos();
+
+            btnNovo.Enabled = true;
+
+            limparCampos();
+         }
+         
       }
 
       // Cadastrar funcionários
@@ -136,7 +156,24 @@ namespace PadariaCarmel {
          comm.Parameters.Add("@cep", MySqlDbType.VarChar, 9).Value = mskCEP.Text;
 
          comm.Connection = Conectar.obterConecxao();
+
          int res = comm.ExecuteNonQuery();
+
+         Conectar.fecharConexao();
+      }
+
+      // Pesquisar por código
+      public void pesquisarPorCod() {
+         MySqlCommand comm = new MySqlCommand();
+         comm.CommandText = "SELECT codFunc + 1 FROM tbfuncionarios ORDER BY codFunc DESC;";
+         comm.CommandType = CommandType.Text;
+         comm.Connection = Conectar.obterConecxao();
+
+         MySqlDataReader DR;
+         DR = comm.ExecuteReader();
+         DR.Read();
+
+         txtCodigo.Text = DR.GetInt32(0).ToString();
 
          Conectar.fecharConexao();
       }
