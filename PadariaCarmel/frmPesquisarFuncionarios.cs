@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace PadariaCarmel {
   public partial class frmPesquisarFuncionarios : Form {
@@ -32,13 +33,13 @@ namespace PadariaCarmel {
       if (rdbCodigo.Checked) {
         txtDescricao.Focus();
         lstPesquisar.Items.Clear();
-        lstPesquisar.Items.Add(txtDescricao.Text);
+        pesquisarCodigo(txtDescricao.Text);
       }
 
       if (rdbNome.Checked) {
         txtDescricao.Focus();
         lstPesquisar.Items.Clear();
-        lstPesquisar.Items.Add(txtDescricao.Text);
+        pesquisarNome(txtDescricao.Text);
       }
 
       txtDescricao.Clear();
@@ -71,5 +72,37 @@ namespace PadariaCarmel {
       abrir.Show();
       this.Hide();
     }
-  }
+
+    // Pesquisat por código
+    public void  pesquisarCodigo(string codigo) {
+         MySqlCommand comm = new MySqlCommand();
+         comm.CommandText = "SELECT nome FROM tbFuncionarios WHERE codFunc = " + codigo + ";";
+         comm.CommandType = CommandType.Text;
+         comm.Connection = Conectar.obterConexao();
+
+         MySqlDataReader DR;
+         DR = comm.ExecuteReader();
+         DR.Read();
+
+         lstPesquisar.Items.Add(DR.GetString(0));
+
+         Conectar.fecharConexao();
+    }
+
+    // Pesquisar por Nome
+    public void pesquisarNome(string nome) {
+         MySqlCommand comm = new MySqlCommand();
+         comm.CommandText = "SELECT nome FROM tbFuncionarios WHERE nome LIKE '%" + nome + "%';";
+         comm.CommandType = CommandType.Text;
+         comm.Connection = Conectar.obterConexao();
+
+         MySqlDataReader DR;
+         DR = comm.ExecuteReader();
+         DR.Read();
+
+         lstPesquisar.Items.Add(DR.GetString(0));
+
+         Conectar.fecharConexao();
+      }
+   }
 }

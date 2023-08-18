@@ -11,7 +11,7 @@ namespace PadariaCarmel {
 
       private static MySqlConnection conn = null;
 
-      public static MySqlConnection obterConecxao() {
+      public static MySqlConnection obterConexao() {
          conn = new MySqlConnection(connstring);
 
          try {

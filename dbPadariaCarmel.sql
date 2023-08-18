@@ -26,8 +26,14 @@ USE dbPadariaCarmel;
 -- Inserindo dados na tabela
 INSERT INTO tbFuncionarios(nome, email, telCel, cpf, endereco, numero, bairro, cidade, estado, cep) VALUES ('Tonhao Motomoto', 'tonhao@email.com', '(11) 99999-9999', '123.456.789-10', 'Rua Dr. Antônio Bento', '355', 'Santo Amaro', 'São Paulo', 'SP', '04750-000');
 
-DESC tbFuncionarios;
+INSERT INTO tbFuncionarios(nome, email, telCel, cpf, endereco, numero, bairro, cidade, estado, cep) VALUES ('Tonhao', 'tonhao2@email.com', '(11) 99999-9999', '111.111.111-11', 'Rua Dr. Antônio Bento', '355', 'Santo Amaro', 'São Paulo', 'SP', '04750-000');
 
+-- UPDATE tbFuncionarios SET nome = @nome, email = @email, telCel = @telCel, cpf = @cpf, endereco = @endereco, numero = @numero, cidade = @cidade, estado = @estado, cep = @cep WHERE condFunc = @codFunc;
+
+DESC tbFuncionarios;
+SELECT nome FROM tbFuncionarios WHERE codFunc = 1;
+SELECT nome FROM tbFuncionarios WHERE nome LIKE '%a%';
 SELECT * FROM tbFuncionarios;
+SELECT nome FROM tbFuncionarios WHERE codFunc = 1;
 DELETE FROM tbFuncionarios WHERE codFunc != 1;
 ALTER TABLE tbfuncionarios AUTO_INCREMENT = 2;

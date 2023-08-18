@@ -80,7 +80,6 @@ C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetoTI108-CSharp\Padar
 C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\bin\x64\Debug\System.Memory.xml
 C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\bin\x64\Debug\System.Numerics.Vectors.xml
 C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\obj\x64\Debug\PadariaCarmel.csproj.AssemblyReference.cache
 C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\obj\x64\Debug\PadariaCarmel.frmCalcula.resources
 C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\obj\x64\Debug\PadariaCarmel.frmComponentes.resources
 C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\obj\x64\Debug\PadariaCarmel.frmFuncionarios.resources
@@ -95,3 +94,4 @@ C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetoTI108-CSharp\Padar
 C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\obj\x64\Debug\PadariaCarmel.csproj.CopyComplete
 C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\obj\x64\Debug\PadariaCarmel.exe
 C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\obj\x64\Debug\PadariaCarmel.pdb
+C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\obj\x64\Debug\PadariaCarmel.csproj.AssemblyReference.cache
