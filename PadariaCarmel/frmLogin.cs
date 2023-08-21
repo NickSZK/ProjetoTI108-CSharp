@@ -29,7 +29,7 @@ namespace PadariaCarmel {
         }
 
         private void btnEntrar_Click(object sender, EventArgs e) {
-         bool resultado = acessoSistema(txtUsuario.Text, txtUsuario.Text);
+         bool resultado = acessoSistema(txtUsuario.Text, txtSenha.Text);
 
          if(resultado) {
                 frmMenuPrincipal abrir = new frmMenuPrincipal();
