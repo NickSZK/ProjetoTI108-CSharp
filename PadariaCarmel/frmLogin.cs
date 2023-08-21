@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using MySql.Data.MySqlClient;
 
 namespace PadariaCarmel {
     public partial class frmLogin : Form {
@@ -28,7 +29,9 @@ namespace PadariaCarmel {
         }
 
         private void btnEntrar_Click(object sender, EventArgs e) {
-            if(txtUsuario.Text.Equals("senac") && txtSenha.Text.Equals("senac")) {
+         bool resultado = acessoSistema(txtUsuario.Text, txtUsuario.Text);
+
+         if(resultado) {
                 frmMenuPrincipal abrir = new frmMenuPrincipal();
                 abrir.Show();
                 this.Hide();
@@ -65,5 +68,26 @@ namespace PadariaCarmel {
             int MenuCount = GetMenuItemCount(hMenu) - 1;
             RemoveMenu(hMenu, MenuCount, MF_BYCOMMAND);
         }
+
+      // Busca usuário por nome no Banco de Dados
+      public bool acessoSistema(string nome, string senha) {
+         MySqlCommand comm = new MySqlCommand();
+         comm.CommandText = "SELECT * FROM tbUsuarios WHERE nome = @nome AND senha = @senha";
+         comm.CommandType = CommandType.Text;
+
+         comm.Parameters.Clear();
+         comm.Parameters.Add("@nome", MySqlDbType.VarChar, 50).Value = nome;
+         comm.Parameters.Add("@senha", MySqlDbType.VarChar, 50).Value = senha;
+
+         comm.Connection = Conectar.obterConexao();
+         MySqlDataReader DR;
+         DR = comm.ExecuteReader();
+
+         bool resultado = DR.HasRows;
+
+         Conectar.fecharConexao();
+
+         return resultado;
+      }
     }
 }
