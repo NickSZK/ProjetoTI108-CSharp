@@ -71,23 +71,34 @@ namespace PadariaCarmel {
 
       // Busca usuário por nome no Banco de Dados
       public bool acessoSistema(string nome, string senha) {
-         MySqlCommand comm = new MySqlCommand();
-         comm.CommandText = "SELECT * FROM tbUsuarios WHERE nome = @nome AND senha = @senha";
-         comm.CommandType = CommandType.Text;
+         try {
+            MySqlCommand comm = new MySqlCommand();
+            comm.CommandText = "SELECT * FROM tbUsuarios WHERE nome = @nome AND senha = @senha";
+            comm.CommandType = CommandType.Text;
 
-         comm.Parameters.Clear();
-         comm.Parameters.Add("@nome", MySqlDbType.VarChar, 50).Value = nome;
-         comm.Parameters.Add("@senha", MySqlDbType.VarChar, 50).Value = senha;
+            comm.Parameters.Clear();
+            comm.Parameters.Add("@nome", MySqlDbType.VarChar, 50).Value = nome;
+            comm.Parameters.Add("@senha", MySqlDbType.VarChar, 50).Value = senha;
 
-         comm.Connection = Conectar.obterConexao();
-         MySqlDataReader DR;
-         DR = comm.ExecuteReader();
+            comm.Connection = Conectar.obterConexao();
+            MySqlDataReader DR;
 
-         bool resultado = DR.HasRows;
+            DR = comm.ExecuteReader();
 
-         Conectar.fecharConexao();
+            bool resultado = DR.HasRows;
 
-         return resultado;
+            Conectar.fecharConexao();
+
+            return resultado;
+         } catch(Exception) {
+            MessageBox.Show("Usuário ou senha inválidos.",
+                    "Mensagem do sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1);
+            return false;
+         }
+         
       }
     }
 }

@@ -95,3 +95,4 @@ C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetoTI108-CSharp\Padar
 C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\obj\x64\Debug\PadariaCarmel.exe
 C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\obj\x64\Debug\PadariaCarmel.pdb
 C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\obj\x64\Debug\PadariaCarmel.csproj.AssemblyReference.cache
+C:\Users\douglas.svieira3\Documents\Visual Studio 2019\ProjetoTI108-CSharp\PadariaCarmel\obj\x64\Debug\PadariaCarmel.frmCadastrarUsuarios.resources
