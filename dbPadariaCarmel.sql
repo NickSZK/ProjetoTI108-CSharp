@@ -74,7 +74,8 @@ create table tbVendas(
 );
 
 -- tbFuncionarios
-INSERT INTO tbFuncionarios(nome, email, telCel, cpf, endereco, numero, bairro, cidade, estado, cep) VALUES ('Tonhao Motomoto', 'tonhao@email.com', '(11) 99999-9999', '123.456.789-10', 'Rua Dr. Antônio Bento', '355', 'Santo Amaro', 'São Paulo', 'SP', '04750-000');
+INSERT INTO tbFuncionarios(nome, email, telCel, cpf, endereco, numero, bairro, cidade, estado, cep) VALUES ('Senac Largo Treze', 'email@email.com', '(11) 99999-9999', '123.456.789-10', 'Rua Dr. Antônio Bento', '355', 'Santo Amaro', 'São Paulo', 'SP', '04750-000');
+UPDATE tbfuncionarios SET nome = 'Senac Largo Treze', email = 'senac@email' WHERE codFunc = 1;
 
 INSERT INTO tbFuncionarios(nome, email, telCel, cpf, endereco, numero, bairro, cidade, estado, cep) VALUES ('Tonhao', 'tonhao2@email.com', '(11) 99999-9999', '111.111.111-11', 'Rua Dr. Antônio Bento', '355', 'Santo Amaro', 'São Paulo', 'SP', '04750-000');
 
@@ -90,9 +91,12 @@ SELECT nome FROM tbFuncionarios WHERE codFunc = 1;
 DELETE FROM tbFuncionarios WHERE codFunc != 1;
 ALTER TABLE tbfuncionarios AUTO_INCREMENT = 1;
 
-INSERT INTO tbFuncionarios(nome, email, telCel, cpf, endereco, numero, bairro, cidade, estado, cep) VALUES ('SENAC L13', 'senac@email.com', '(11) 99999-9999', '123.456.789-10', 'Rua Dr. Antônio Bento', '355', 'Santo Amaro', 'São Paulo', 'SP', '04750-000');
+INSERT INTO tbFuncionarios(nome, email, telCel, cpf, endereco, numero, bairro, cidade, estado, cep) VALUES ('SENAC L13', 'senac@email.com', '(11) 99999-9999', '123.456.789-20', 'Rua Dr. Antônio Bento', '355', 'Santo Amaro', 'São Paulo', 'SP', '04750-000');
 
 -- tbUsuarios
 INSERT INTO tbUsuarios (nome, senha, codFunc) VALUES ('senac', 'senac', 1);
 SELECT * FROM tbUsuarios;
 SELECT * FROM tbUsuarios WHERE nome = 'senac' AND senha = 'senac';
+
+-- Inner Join
+SELECT usu.nome, usu.senha, func.codFunc FROM tbfuncionarios AS func INNER JOIN tbusuarios AS usu ON func.codFunc = usu.codFunc WHERE func.nome = 'Senac Largo Treze';

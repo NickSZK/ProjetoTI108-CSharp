@@ -32,6 +32,7 @@ namespace PadariaCarmel {
          this.txtCodigo = new System.Windows.Forms.TextBox();
          this.lblCodigo = new System.Windows.Forms.Label();
          this.pnlFuncionario = new System.Windows.Forms.Panel();
+         this.lblFuncNCad = new System.Windows.Forms.Label();
          this.lstFuncNCad = new System.Windows.Forms.ListBox();
          this.txtContraSenha = new System.Windows.Forms.TextBox();
          this.lblContraSenha = new System.Windows.Forms.Label();
@@ -43,7 +44,7 @@ namespace PadariaCarmel {
          this.btnLimpar = new System.Windows.Forms.Button();
          this.btnVoltar = new System.Windows.Forms.Button();
          this.pnlCRUD = new System.Windows.Forms.Panel();
-         this.lblFuncNCad = new System.Windows.Forms.Label();
+         this.txtCodFunc = new System.Windows.Forms.TextBox();
          this.pnlFuncionario.SuspendLayout();
          this.pnlCRUD.SuspendLayout();
          this.SuspendLayout();
@@ -103,6 +104,7 @@ namespace PadariaCarmel {
          // 
          // pnlFuncionario
          // 
+         this.pnlFuncionario.Controls.Add(this.txtCodFunc);
          this.pnlFuncionario.Controls.Add(this.lblFuncNCad);
          this.pnlFuncionario.Controls.Add(this.lstFuncNCad);
          this.pnlFuncionario.Controls.Add(this.txtContraSenha);
@@ -119,6 +121,15 @@ namespace PadariaCarmel {
          this.pnlFuncionario.Size = new System.Drawing.Size(783, 482);
          this.pnlFuncionario.TabIndex = 0;
          // 
+         // lblFuncNCad
+         // 
+         this.lblFuncNCad.AutoSize = true;
+         this.lblFuncNCad.Location = new System.Drawing.Point(467, 97);
+         this.lblFuncNCad.Name = "lblFuncNCad";
+         this.lblFuncNCad.Size = new System.Drawing.Size(223, 20);
+         this.lblFuncNCad.TabIndex = 25;
+         this.lblFuncNCad.Text = "Funcionários não cadastrados";
+         // 
          // lstFuncNCad
          // 
          this.lstFuncNCad.FormattingEnabled = true;
@@ -127,6 +138,7 @@ namespace PadariaCarmel {
          this.lstFuncNCad.Name = "lstFuncNCad";
          this.lstFuncNCad.Size = new System.Drawing.Size(242, 224);
          this.lstFuncNCad.TabIndex = 24;
+         this.lstFuncNCad.SelectedIndexChanged += new System.EventHandler(this.lstFuncNCad_SelectedIndexChanged);
          // 
          // txtContraSenha
          // 
@@ -258,14 +270,12 @@ namespace PadariaCarmel {
          this.pnlCRUD.Size = new System.Drawing.Size(783, 81);
          this.pnlCRUD.TabIndex = 5;
          // 
-         // lblFuncNCad
+         // txtCodFunc
          // 
-         this.lblFuncNCad.AutoSize = true;
-         this.lblFuncNCad.Location = new System.Drawing.Point(467, 97);
-         this.lblFuncNCad.Name = "lblFuncNCad";
-         this.lblFuncNCad.Size = new System.Drawing.Size(223, 20);
-         this.lblFuncNCad.TabIndex = 25;
-         this.lblFuncNCad.Text = "Funcionários não cadastrados";
+         this.txtCodFunc.Location = new System.Drawing.Point(165, 82);
+         this.txtCodFunc.Name = "txtCodFunc";
+         this.txtCodFunc.Size = new System.Drawing.Size(100, 26);
+         this.txtCodFunc.TabIndex = 26;
          // 
          // frmCadastrarUsuarios
          // 
@@ -311,5 +321,6 @@ namespace PadariaCarmel {
       private System.Windows.Forms.Panel pnlCRUD;
       private System.Windows.Forms.ListBox lstFuncNCad;
       private System.Windows.Forms.Label lblFuncNCad;
+      private System.Windows.Forms.TextBox txtCodFunc;
    }
 }

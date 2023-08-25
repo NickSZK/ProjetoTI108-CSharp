@@ -90,23 +90,37 @@ namespace PadariaCarmel {
 
             txtNome.Focus();
          } else {
-            cadastrarUsuarios();
 
-            MessageBox.Show("Cadastrado com Sucesso!",
-                "Mensagem do Sistema.",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information,
-                MessageBoxDefaultButton.Button1);
+            if(txtSenha.Text.Equals(txtContraSenha.Text)) {
+               cadastrarUsuarios(Convert.ToInt32(txtCodFunc.Text));
 
-            desabilitarCampos();
+               MessageBox.Show("Cadastrado com Sucesso!",
+                   "Mensagem do Sistema.",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Information,
+                   MessageBoxDefaultButton.Button1);
 
-            btnNovo.Enabled = true;
+               desabilitarCampos();
 
-            limparCampos();
+               btnNovo.Enabled = true;
+
+               limparCampos();
+            } else {
+               MessageBox.Show("Senha e contrasenha não são compatíveis!",
+                   "Mensagem do Sistema.",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Error,
+                   MessageBoxDefaultButton.Button1);
+
+               txtSenha.Text = "";
+               txtContraSenha.Text = "";
+               txtSenha.Focus();
+            }
+            
          }
       }
 
-      public void cadastrarUsuarios() {
+      public void cadastrarUsuarios(int codFunc) {
          MySqlCommand comm = new MySqlCommand();
          comm.CommandText = "INSERT INTO tbFuncionarios(nome, senha, codFunc) VALUES (@nome, @senha, @codFunc);";
 
@@ -115,13 +129,47 @@ namespace PadariaCarmel {
          comm.Parameters.Clear();
          comm.Parameters.Add("@nome", MySqlDbType.VarChar, 50).Value = txtNome.Text;
          comm.Parameters.Add("@senha", MySqlDbType.VarChar, 14).Value = txtSenha.Text;
-         
+         comm.Parameters.Add("@codFunc", MySqlDbType.Int32, 11).Value = txtCodFunc.Text;
+
 
          comm.Connection = Conectar.obterConexao();
 
          int res = comm.ExecuteNonQuery();
 
          Conectar.fecharConexao();
+      }
+
+      // Carregar usuário
+      public void carregarUsuarios(string nome) {
+         MySqlCommand comm = new MySqlCommand();
+         comm.CommandText = "SELECT usu.nome, usu.senha, func.codFunc FROM tbfuncionarios AS func INNER JOIN tbusuarios AS usu ON func.codFunc = usu.codFunc WHERE func.nome = '" + nome + "';";
+         comm.CommandType = CommandType.Text;
+
+         comm.Connection = Conectar.obterConexao();
+
+         MySqlDataReader DR;
+         DR = comm.ExecuteReader();
+         DR.Read();
+
+         try {
+            txtNome.Text = DR.GetString(0);
+            txtSenha.Text = DR.GetString(1);
+
+            txtCodFunc.Text = DR.GetInt32(2).ToString();
+
+            Conectar.fecharConexao();
+         } catch(Exception) {
+            MessageBox.Show("Funcionário não encontrado",
+               "Mensagem do Sistema.",
+               MessageBoxButtons.OK,
+               MessageBoxIcon.Information,
+               MessageBoxDefaultButton.Button1);
+
+            txtNome.Clear();
+            txtSenha.Clear();
+            txtCodigo.Clear();
+            txtNome.Focus();
+         }
       }
 
       private void btnVoltar_Click(object sender, EventArgs e) {
@@ -146,6 +194,12 @@ namespace PadariaCarmel {
          }
 
          Conectar.fecharConexao();
+      }
+
+      private void lstFuncNCad_SelectedIndexChanged(object sender, EventArgs e) {
+         string nome = lstFuncNCad.SelectedItem.ToString();
+
+         carregarUsuarios(nome);
       }
    }
 }
